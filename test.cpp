@@ -1,5 +1,7 @@
+#include <stdio.h>
 int main()
 {
     int a = 0;
-    return a;
+    printf("a: %i\n",a);
+    return 0;
 }
