@@ -1,5 +1,5 @@
 BIN=test
-OBJS= test.o
+OBJS= test.o test2.o
 
 $(BIN): $(OBJS)
 	ccache $(CXX) $< -o $@
