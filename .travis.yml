@@ -10,7 +10,7 @@ cache:
   directories:
   - $HOME/.ccache
 script:
-    - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; ccache --max-size=$CCACHE_SIZE; fi
+    - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then ccache --max-size=$CCACHE_SIZE; fi
     - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then export CCACHE_READONLY=1; fi
     - echo $CCACHE_READONLY
     - make
