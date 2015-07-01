@@ -1,5 +1,5 @@
 language: c
 compiler: gcc
 sudo: true
-install: travis_retry sudo apt-get install --no-install-recommends --no-upgrade -qq gcc-mingw-w64-x86-64 binutils-mingw-w64-x86-64 wine
+install: travis_retry sudo apt-get update && sudo apt-get install --no-install-recommends --no-upgrade -qq gcc-mingw-w64-x86-64 binutils-mingw-w64-x86-64 wine
 script: make check
