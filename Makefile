@@ -1,11 +1,6 @@
-BIN=test
-OBJS= test.o test2.o test3.o
+all: test
+test.exe: test.c
+	x86_64-w64-mingw32-gcc $< -o $@
 
-$(BIN): $(OBJS)
-	ccache $(CXX) $^ -o $@
-
-%.o: %.cpp
-	ccache $(CXX) -c $< -o $@
-
-clean:
-	rm -f $(OBJS) $(BIN)
+check: test.exe
+	./test.exe

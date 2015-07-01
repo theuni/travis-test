@@ -1,18 +1,10 @@
-os: linux
-language: cpp
+language: c
+compiler: gcc
 sudo: false
-env:
-  global:
-    - CCACHE_SIZE=100M
-    - CCACHE_TEMPDIR=/tmp/.ccache-temp
-    - CCACHE_COMPRESS=1
-cache:
-  directories:
-  - $HOME/.ccache
-script:
-    - ccache -s
-    - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then ccache --max-size=$CCACHE_SIZE; fi
-    - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then export CCACHE_READONLY=1; fi
-    - echo $CCACHE_READONLY
-    - make
-    - ccache -s
+addons:
+  apt:
+    packages:
+      - gcc-mingw-w64-x86-64
+      - binutils-mingw-w64-x86-64
+      - wine
+script: make check
