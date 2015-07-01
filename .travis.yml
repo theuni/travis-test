@@ -7,6 +7,7 @@ addons:
       - gcc-mingw-w64-x86-64
       - binutils-mingw-w64-x86-64
       - wine
+      - zsh
 script:
-  - command_not_found_handle() { if [[ $1 =~ .*.exe ]]; then wine "$@"; fi }
+  - echo "alias -s exe='wine'" > ~/.zshenv
   - make check
