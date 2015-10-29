@@ -1,6 +1,6 @@
 language: c
 compiler: gcc
-sudo: required
+sudo: false
 dist: trusty
 addons:
   apt:
@@ -12,4 +12,5 @@ cache:
   directories:
   - cached
 script:
+  - mkdir cached
   - echo "test" > cached/cached.txt
