@@ -12,5 +12,4 @@ cache:
   directories:
   - cached
 script:
-  - cat cached/cached.txt || echo "not yet cached"
   - echo "test" > cached/cached.txt
