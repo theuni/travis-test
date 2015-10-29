@@ -7,8 +7,10 @@ addons:
     packages:
       - gcc-mingw-w64-x86-64
       - binutils-mingw-w64-x86-64
-      - wine
-      - zsh
+cache:
+  apt: true
+  directories:
+  - cached
 script:
-  - echo "alias -s exe='wine'" > ~/.zshenv
-  - make check
+  - cat cached/cached.txt || echo "not yet cached"
+  - echo "test" > cached/cached.txt
