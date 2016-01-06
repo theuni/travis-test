@@ -1,7 +1,6 @@
 language: c
 compiler: gcc
 sudo: false
-dist: trusty
 addons:
   apt:
     packages:
