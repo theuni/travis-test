@@ -6,10 +6,12 @@ addons:
     packages:
       - gcc-mingw-w64-x86-64
       - binutils-mingw-w64-x86-64
+      - wine
 cache:
   apt: true
   directories:
   - cached
 script:
-  - mkdir cached
+  - make check
+  - mkdir -p cached
   - echo "test" > cached/cached.txt
