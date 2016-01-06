@@ -12,6 +12,7 @@ cache:
   directories:
   - cached
 script:
+  - trap "[ \$? -eq 126 ] && echo wine \$BASH_COMMAND" ERR
   - make check
   - mkdir -p cached
   - echo "test" > cached/cached.txt
