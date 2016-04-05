@@ -1,18 +1,15 @@
-language: c
-compiler: gcc
-sudo: false
-addons:
-  apt:
-    packages:
-      - gcc-mingw-w64-x86-64
-      - binutils-mingw-w64-x86-64
-      - wine
+language: ruby
+
+rvm: default
+
+sudo: required
+dist: trusty
+
 cache:
-  apt: true
-  directories:
-  - cached
+  bundler: true
+
 script:
-  - trap "[ \$? -eq 126 ] && echo wine \$BASH_COMMAND" ERR
-  - make check
-  - mkdir -p cached
-  - echo "test" > cached/cached.txt
+  - true
+
+notifications:
+  email: false
