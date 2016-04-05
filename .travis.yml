@@ -2,12 +2,6 @@ language: c
 compiler: gcc
 sudo: required
 dist: trusty
-addons:
-  apt:
-    packages:
-      - gcc-mingw-w64-x86-64
-      - binutils-mingw-w64-x86-64
-      - wine
 cache:
   apt: true
   directories:
