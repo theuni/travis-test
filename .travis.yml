@@ -6,7 +6,6 @@ cache:
   apt: true
   directories:
   - cached
-
 script:
   - make check
   - mkdir -p cached
