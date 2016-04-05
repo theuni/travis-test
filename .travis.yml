@@ -1,6 +1,7 @@
 language: c
 compiler: gcc
-sudo: false
+sudo: required
+dist: trusty
 addons:
   apt:
     packages:
@@ -12,7 +13,8 @@ cache:
   directories:
   - cached
 script:
-  - trap "[ \$? -eq 126 ] && echo wine \$BASH_COMMAND" ERR
   - make check
   - mkdir -p cached
+  - touch cached/cached.txt
+  - cat cached/cached.txt
   - echo "test" > cached/cached.txt
