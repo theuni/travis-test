@@ -1,5 +1,5 @@
-language: c
-compiler: gcc
+language: ruby
+rvm: default
 sudo: required
 dist: trusty
 cache:
