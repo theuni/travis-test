@@ -2,6 +2,7 @@ language: generic
 sudo: required
 dist: trusty
 install:
+    - sudo dpkg --add-architecture i386
     - sudo apt-get update
     - sudo apt-get install nsis g++-mingw-w64-i686 wine1.6 wine1.6-i386 bc
 script:
