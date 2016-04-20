@@ -1,14 +1,8 @@
-language: ruby
-rvm: default
+language: generic
 sudo: required
 dist: trusty
-cache:
-  apt: true
-  directories:
-  - cached
+install:
+    - sudo apt-get update
+    - sudo apt-get install --no-install-recommends --no-upgrade nsis g++-mingw-w64-i686 wine1.7 bc
 script:
   - make check
-  - mkdir -p cached
-  - touch cached/cached.txt
-  - cat cached/cached.txt
-  - echo "test" > cached/cached.txt

@@ -1,6 +1,6 @@
 all: test
 test.exe: test.c
-	gcc $< -o $@
+	x86_64-w64-mingw32-gcc $< -o $@
 
-check: test
-	./test
+check: test.exe
+	./test.exe
