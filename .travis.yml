@@ -3,6 +3,6 @@ sudo: required
 dist: trusty
 install:
     - sudo apt-get update
-    - sudo apt-get install nsis g++-mingw-w64-x86-64 wine1.6-amd64 bc
+    - sudo apt-get install --no-install-recommends nsis g++-mingw-w64-x86-64 wine1.6-amd64 bc
 script:
   - make check
