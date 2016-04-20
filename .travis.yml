@@ -2,8 +2,8 @@ language: cpp
 sudo: required
 dist: trusty
 install:
+    - sudo sudo rm -f /etc/apt/sources.list.d/google-chrome.list
     - sudo ls /etc/apt/sources.list.d/
-    - sudo rm -f /etc/apt/sources.list.d/travis_ci_google-chrome-source.list
     - sudo dpkg --add-architecture i386
     - sudo apt-get update
     - sudo apt-get install --no-install-recommends nsis g++-mingw-w64-x86-64 wine1.6-amd64 bc
