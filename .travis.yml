@@ -3,7 +3,7 @@ sudo: required
 dist: trusty
 install:
     - sudo apt-get update
-    - sudo apt-get install --no-install-recommends python3-zmq
+    - sudo apt-get install --no-install-recommends --no-upgrade -qq python3-zmq
 script:
   - ls /usr/lib/python3/dist-packages/zmq/
   - echo $PYTHONPATH
