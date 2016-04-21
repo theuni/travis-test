@@ -2,6 +2,6 @@ language: cpp
 sudo: required
 dist: trusty
 install:
-    - pip3 install pyzmq
+    - sudo pip3 install pyzmq
 script:
     - python3 test.py
