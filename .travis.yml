@@ -4,7 +4,7 @@ dist: trusty
 before_install:
     - export PATH=$(echo $PATH | tr ':' "\n" | sed '/\/opt\/python/d' | tr "\n" ":" | sed "s|::|:|g")
 install:
-    - sudo apt-get update
-    - sudo apt-get install --no-install-recommends --no-upgrade -qq python-zmq python3-zmq
 script:
-    - python3 test.py
+    - df -h
+    - free -m
+    - cat /proc/cpuinfo
