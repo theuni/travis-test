@@ -5,6 +5,8 @@ before_install:
     - export PATH=$(echo $PATH | tr ':' "\n" | sed '/\/opt\/python/d' | tr "\n" ":" | sed "s|::|:|g")
 install:
 script:
+    - mkdir -p /tmp/tmpfs
+    - sudo mount -t tmpfs -o size=1000M,mode=0777 tmpfs /tmp/tmpfs
+    - touch /tmp/tmpfs/test
     - df -h
     - free -m
-    - cat /proc/cpuinfo
