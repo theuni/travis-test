@@ -12,7 +12,6 @@ script:
   - echo "ccache before:"
   - find ~/.ccache/
   - echo ";" >> dummy/foo/file
-  - echo ";" >> dummy/bar/file
   - echo ";" >> test.c
   - ccache gcc -c test.c -o test.o
   - echo "ccache after:"
