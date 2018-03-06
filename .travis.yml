@@ -7,6 +7,7 @@ cache:
   directories:
   - dummy/foo
   - dummy/bar
+  - $HOME/.ccache
 
 script:
   - echo "ccache before:"
