@@ -1,18 +1,15 @@
-language: cpp
 sudo: required
 dist: trusty
-before_install:
-    - export PATH=$(echo $PATH | tr ':' "\n" | sed '/\/opt\/python/d' | tr "\n" ":" | sed "s|::|:|g")
-install:
-env:
-  global:
-    - TMPDIR=/tmp/tmpfs/tmp
-    - CCACHE_DIR=${TMPDIR}/.ccache
+os: linux
+language: minimal
+cache:
+  ccache: true
+  directories:
+  - dummy/foo
+  - dummy/bar
+
 script:
-    - mkdir -p ${TMPDIR}
-    - mkdir -p ${CCACHE_DIR}
-    - sudo mount -t tmpfs -o size=1000M,mode=0777 tmpfs ${TMPDIR}
-    - touch ${TMPDIR}/test
-    - df -h
-    - free -m
-    - make check
+    echo ";" >> dummy/foo/file
+    echo ";" >> dummy/bar/file
+    echo ";" >> test.c
+    ccache gcc -c test.c -o test.o
